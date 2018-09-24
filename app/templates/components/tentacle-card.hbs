@@ -1,0 +1,20 @@
+<i class="selected-icon material-icons {{if isSelected "visible"}}">check_circle</i>
+
+
+<div class="mdc-card__media">
+  <div 
+    class="tentacle-description"
+    data-text={{{descriptionAttr}}}
+  >
+    <img
+      src={{image}} 
+      class="tentacle-image" 
+      alt="Placeholder"
+    >
+  </div>
+</div>
+
+<div class="mdc-card__actions">
+  <h6 class="tentacle-title mdc-card__action mdc-typography--headline6">{{title}}</h6>
+  <h6 class="tentacle-cost mdc-card__action mdc-typography--headline6">Cost: {{cost}}</h6>
+</div>

@@ -1,0 +1,19 @@
+{{outlet}}
+
+{{#each model as |group|}}
+  <center>
+    <h1>{{group.name}}</h1>
+    {{#each group.description as |desc|}}
+      <p>{{desc}}</p>
+    {{/each}}
+
+    {{#each group.values as |tentacle|}}
+      {{tentacle-card 
+        title=tentacle.title 
+        image=tentacle.image 
+        cost=tentacle.cost
+        description=tentacle.description
+      }}
+    {{/each}}
+  </center>
+{{/each}}

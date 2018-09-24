@@ -38,6 +38,7 @@ const material = {
     { name: 'textfield',        css: true,  js: true  },
     { name: 'theme',            css: true,  js: false },
     { name: 'toolbar',          css: true,  js: true  },
+    { name: 'top-app-bar',      css: true,  js: true  },
     { name: 'typography',       css: true,  js: false },
   ],
 

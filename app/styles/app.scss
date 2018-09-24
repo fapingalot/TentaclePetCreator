@@ -1,0 +1,83 @@
+@import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/card/mdc-card";
+@import "@material/button/mdc-button";
+@import "@material/typography/mdc-typography";
+@import "@material/ripple/mdc-ripple";
+@import "@material/elevation/mdc-elevation";
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto';
+  margin: 0;
+  padding-top: 0.1px; // Prevent header h1 margin from pushing body down
+}
+
+.tentacle-card {
+  position: relative;
+  float: left;
+  width: 260px;
+  margin: 3px;
+
+  .selected-icon {
+    position: absolute;
+    z-index: 10;
+    right: 0px;
+
+    color: $mdc-theme-primary;
+    margin: 3px;
+
+    visibility: hidden;
+
+    &.visible {
+      visibility: visible;
+    }
+  }
+
+  .tentacle-description {
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+
+    img {
+      display: block;
+      width: 100%;
+
+      padding: 0px;
+      margin: 0px;
+    }
+
+    &:hover > img {
+      filter: brightness(80%);
+    }
+    
+    &:after {
+      position: absolute;
+      top: 25px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      padding: 8px;
+      content: attr(data-text);
+      opacity: 0;
+
+    }
+    &:hover:after {
+      opacity: 1;
+    }
+  }
+
+  .tentacle-title {
+      margin: 0;
+  }
+  .tentacle-cost {
+      position: absolute;
+      margin: 0;
+      right: 8px;
+  }
+
+  &:after {
+    opacity: 1-0.08;
+  }
+}
