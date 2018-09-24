@@ -1,6 +1,8 @@
-NODE_PATH=$(realpath $(dirname $0)/../node_modules)
 WORK_DIR=$(realpath $(dirname $0))
+NODE_PATH=$(realpath $WORK_DIR/../node_modules)
 
+
+cd $WORK_DIR
 for fn in `cat packages.txt`; do
     cd "$WORK_DIR" && rm -rf $fn
     for file in `find "$NODE_PATH/$fn/" -name "*.scss"`; do
