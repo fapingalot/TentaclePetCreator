@@ -1,6 +1,10 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
+/lib_sass/**
+!/lib_sass/packages.txt
+!/lib_sass/update.sh
+
 /dist/
 /tmp/
 

@@ -56,7 +56,7 @@ module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
     sassOptions: {
-      includePaths: [__dirname + "/lib_material"]
+      includePaths: [__dirname + "/lib_sass"]
     }
   });
 

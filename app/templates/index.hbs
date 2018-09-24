@@ -1,19 +1,22 @@
 {{outlet}}
 
 {{#each model as |group|}}
-  <center>
+  <div class="tentacle-group">
     <h1>{{group.name}}</h1>
     {{#each group.description as |desc|}}
       <p>{{desc}}</p>
     {{/each}}
 
-    {{#each group.values as |tentacle|}}
-      {{tentacle-card 
-        title=tentacle.title 
-        image=tentacle.image 
-        cost=tentacle.cost
-        description=tentacle.description
-      }}
-    {{/each}}
-  </center>
+    <div class="tentacle-list">
+      {{#each group.values as |tentacle|}}
+        {{tentacle-card 
+          title=tentacle.title 
+          image=tentacle.image 
+          cost=tentacle.cost
+          isSelected=tentacle.defaultSelected
+          description=tentacle.description
+        }}
+      {{/each}}
+    </div>
+  </div>
 {{/each}}
