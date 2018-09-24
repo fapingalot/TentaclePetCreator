@@ -1,11 +1,10 @@
-@import "@material/top-app-bar/mdc-top-app-bar";
 @import "@material/card/mdc-card";
 @import "@material/button/mdc-button";
+@import "@material/icon-button/mdc-icon-button";
 @import "@material/typography/mdc-typography";
-@import "@material/ripple/mdc-ripple";
-@import "@material/elevation/mdc-elevation";
+@import "@material/top-app-bar/mdc-top-app-bar";
 
-@import "susy/sass/susy";
+@import "__grid.scss";
 
 html, body {
   height: 100%;
@@ -17,77 +16,51 @@ body {
   padding-top: 0.1px; // Prevent header h1 margin from pushing body down
 }
 
-.tentacle-group {
-  display: block;
+@import "components/tentacle-card.scss";
 
-  .tentacle-list {
+.tentacle-group {
+  float: left;
+
+  .tentacle-group-title {
     display: block;
 
-    .tentacle-card {
-      position: relative;
-      float: left;
-      width: 260px;
-      margin: 3px;
-    
-      .selected-icon {
-        position: absolute;
-        z-index: 10;
-        right: 0px;
-    
-        color: $mdc-theme-primary;
-        margin: 3px;
-    
-        visibility: hidden;
-    
-        &.visible {
-          visibility: visible;
-        }
+    text-align: center;
+  }
+  .tentacle-group-description {
+    display: block;
+
+    text-align: center;
+  }
+
+  .tentacle-list {
+    // display: block;
+
+    display: flex;
+    flex-wrap: wrap; // allow wrapping items
+
+    .tentacle-card-parent {
+      display: block;
+      // float: left;
+
+      @include breakpoint(100px) {
+        width: span(1 of 1);
+        margin: gutter() 0 gutter() gutter();
       }
-    
-      .tentacle-description {
-        position: relative;
-        padding: 0px;
-        margin: 0px;
-    
-        img {
-          display: block;
-          width: 100%;
-    
-          padding: 0px;
-          margin: 0px;
-        }
-    
-        &:hover > img {
-          filter: brightness(80%);
-        }
-        
-        &:after {
-          position: absolute;
-          top: 25px;
-          left: 0px;
-          right: 0px;
-          bottom: 0px;
-          padding: 8px;
-          content: attr(data-text);
-          opacity: 0;
-    
-        }
-        &:hover:after {
-          opacity: 1;
-        }
+      @include breakpoint(500px) {
+        width: span(1 of 2);
+        margin: gutter() 0 gutter() gutter();
       }
-    
-      .tentacle-title {
-          margin: 0;
+      @include breakpoint(700px) {
+        width: span(1 of 3);
+        margin: gutter() 0 gutter() gutter();
       }
-      .tentacle-cost {
-          position: absolute;
-          margin: 0;
-          right: 8px;
+      @include breakpoint(900px) {
+        width: span(1 of 4);
+        margin: gutter() 0 gutter() gutter();
       }
-    
-      &:after {
-        opacity: 1-0.08;
+      @include breakpoint(1100px) {
+        width: span(1 of 5);
+        margin: gutter() 0 gutter() gutter();
       }
     }
   }

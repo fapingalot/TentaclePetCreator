@@ -1,0 +1,62 @@
+@import "@material/card/mdc-card";
+@import "@material/typography/mdc-typography";
+@import "@material/icon-button/mdc-icon-button";
+@import "@material/ripple/mdc-ripple";
+
+@import "__my_lib/mixins/__filter";
+
+.tentacle-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+
+  .selected-icon {
+    position: absolute;
+    z-index: 1;
+    top: 3px;
+    right: 3px;
+
+    color: $mdc-theme-primary;
+
+    visibility: hidden;
+    
+    &.visible {
+      visibility: visible;
+    }
+
+    &.disabled {
+        color: grey;
+    }
+  }
+
+  .tentacle-image {
+    display: block;
+    width: 100%;
+
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .thumbnail {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+
+      margin-right: 4px;
+  }
+
+  .tentacle-title {
+      margin: 0;
+  }
+  .expand {
+      float: left;
+  }
+
+  .tentacle-description {
+    display: none;
+
+    &.expanded {
+        display: block;
+    }
+  }
+}

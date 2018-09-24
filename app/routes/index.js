@@ -22,7 +22,8 @@ export default Route.extend({
                             "A Tentacle Pet's slimy body will prevent it from gathering any germs or detritus from touching the ground.",
                             "Additionally, its cum will automatically evaporate aftera while. You can adjust how long it lingers."
                         ],
-                        "defaultSelected": true
+                        "defaultSelected": true,
+                        "canChange": false
                     },
                     {
                         "title": "Loyal",
@@ -33,7 +34,8 @@ export default Route.extend({
                             "Your pet will never attempt to harm a living being.",
                             "Most pets will not rape anyone. Though if they're starving or unhappy they might do so."
                         ],
-                        "defaultSelected": true
+                        "defaultSelected": true,
+                        "canChange": false
                     },
                     {
                         "title": "Sex Diet",
@@ -44,7 +46,8 @@ export default Route.extend({
                             "To keep your pet healthy and happy the both of you should orgasm at least 3 times a day.",
                             "You can mod your pet to cum at the same time you do. "
                         ],
-                        "defaultSelected": true
+                        "defaultSelected": true,
+                        "canChange": false
                     },
                     {
                         "title": "Tough & Strong",
@@ -54,7 +57,8 @@ export default Route.extend({
                             "Tentacle monsters are notoriously difficult to kill, as they possess incredible durability and regenerative properties. They'll live forever if not killed.",
                             "They are also strong enough to lift and bind humans effortlessly for extremely long periods of time."
                         ],
-                        "defaultSelected": true
+                        "defaultSelected": true,
+                        "canChange": false
                     },
                     {
                         "title": "Penis Head",
@@ -64,7 +68,8 @@ export default Route.extend({
                             "What kind of tentacle monster doesn't have a plethora of penises at its disposal? Dozens of dicks at the ready for penetration and ejaculation.",
                             "Your pet also has access to the PG-13 tapered tentacle. "
                         ],
-                        "defaultSelected": true
+                        "defaultSelected": true,
+                        "canChange": false
                     }
                 ]
             },
@@ -87,7 +92,8 @@ export default Route.extend({
                             "Or in other words, eternal youth, pretty sweet huh?",
                             "On top of that, your body will now maintain its shape. So exercise is 100% unnecessary."
                         ],
-                        "defaultSelected": true
+                        "defaultSelected": true,
+                        "canChange": false
                     },
                     {
                         "title": "Total Makeover",
@@ -97,7 +103,8 @@ export default Route.extend({
                             "Don't have the ‘equipment’ you want? Easy fix. We can modify your gender however you wish. Male, female, both?",
                             "While we're at it, we can completely re-do your appearance however you want, even add on some wierd parts."
                         ],
-                        "defaultSelected": true
+                        "defaultSelected": true,
+                        "canChange": false
                     },
                     {
                         "title": "Endurance",
@@ -107,7 +114,9 @@ export default Route.extend({
                             "Your body is now much more durable. So you can enjoy hours upon hours of tentacle sex without injury or exhaustion.",
                             "Also removes refractory periods, and period periods. Because fuck those honestly.",
                             ""
-                        ]
+                        ],
+                        "defaultSelected": true,
+                        "canChange": false
                     },
                     {
                         "title": "Stretchy ",
@@ -118,7 +127,8 @@ export default Route.extend({
                             "Your orifices can be painlessly stretched and inflated to insane degrees and will always return to optimal tightness.",
                             "We can also apply this to ‘unconventional’ orifices if you really want us to."
                         ],
-                        "defaultSelected": true
+                        "defaultSelected": true,
+                        "canChange": false
                     },
                     {
                         "title": "Wasteless ",
@@ -129,7 +139,8 @@ export default Route.extend({
                             "Allows you to toggle your fertility if you ever fuck another person.",
                             "Yes I included having children in the 'waste’ category."
                         ],
-                        "defaultSelected": true
+                        "defaultSelected": true,
+                        "canChange": false
                     }
                 ]
             },
@@ -152,7 +163,8 @@ export default Route.extend({
                             "This pet will relentlessly fuck anyone it can grab.",
                             "After 5 hours of sex, built in tranquilizers will knock it out for the remainder of the day."
                         ],
-                        "defaultSelected": false
+                        "defaultSelected": false,
+                        "canChange": true
                     },
                     {
                         "title": "Instinctive",
@@ -161,7 +173,9 @@ export default Route.extend({
                         "description": [
                             "This pet is driven by instinct. It'll initiate sex whenever it gets hungry, regardless of consent. It can understand the most basic orders, such as 'follow’ or 'fuck’.",
                             "While having sex, it'll do whatever it wants with whatever perks you have enabled."
-                        ]
+                        ],
+                        "defaultSelected": false,
+                        "canChange": true
                     },
                     {
                         "title": "Standard",
@@ -171,7 +185,8 @@ export default Route.extend({
                             "The standard intelligence for our pets. Your pet will only have sex with consenting partners.",
                             "Standard pets can understand basic orders and will do what you tell them to during sex."
                         ],
-                        "defaultSelected": true
+                        "defaultSelected": true,
+                        "canChange": true
                     },
                     {
                         "title": "Smart",
@@ -181,7 +196,8 @@ export default Route.extend({
                             "Smart pets are capable of understanding and performing complicated orders.",
                             "At this stage they can do menial chores and learn new things easily. They can even read."
                         ],
-                        "defaultSelected": false
+                        "defaultSelected": false,
+                        "canChange": true
                     },
                     {
                         "title": "Sapient",
@@ -191,7 +207,8 @@ export default Route.extend({
                             "A pet that can truly think for itself. It's still biologically programmed to serve you without fail.",
                             "Its mental capabilities are similar to a humans. You can decide how far along its mental development is. "
                         ],
-                        "defaultSelected": false
+                        "defaultSelected": false,
+                        "canChange": true
                     }
                 ]
             }

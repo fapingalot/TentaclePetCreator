@@ -1,31 +1,29 @@
 import Component from '@ember/component';
-import {htmlSafe} from '@ember/template';
-import {computed} from '@ember/object';
+import { A } from '@ember/array';
 
 export default Component.extend({
     tagName : "div",
-    classNames: ["tentacle-card", "mdc-card"],
-    classNameBindings: ["isSelected:selected"],
+    classNames: ["tentacle-card", "mdc-card", ""],
+    classNameBindings: ["isSelected:selected", "canChange:togglable", "canChange:mdc-ripple-surface"],
 
+    // Data
     title: "Monster",
     image: "tentacle_pictures/default.png",
-    description: ["some text"],
+    description: A([]),
     cost: 0,
+    canChange: true,
 
     isSelected: false,
-
-    click() {
-        this.set("isSelected", !this.isSelected);
-    },
-
-    imageStyle: computed('image', function(){
-        return htmlSafe("background-image: url('"+this.image+"');");
-    }),
-    descriptionAttr: computed('description', function(){
-        let desc = "";
-        for (let i = 0; i < this.description.length; i++) {
-            desc+= htmlSafe(this.description[i]) + "\n";
+    isExpanded: false,
+    
+    actions: {
+        toggleSelected(){
+            if(this.canChange) {
+                this.set("isSelected", !this.isSelected);
+            }
+        },
+        toogleExpanded() {
+            this.set("isExpanded", !this.isExpanded);
         }
-        return desc;
-    }),
+    },
 });

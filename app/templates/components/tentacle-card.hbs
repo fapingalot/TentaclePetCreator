@@ -1,20 +1,30 @@
-<i class="selected-icon material-icons {{if isSelected "visible"}}">check_circle</i>
-
+<i 
+  class="selected-icon material-icons {{if isSelected "visible"}} {{unless canChange "disabled"}}"
+>
+  check_circle
+</i>
 
 <div class="mdc-card__media">
-  <div 
-    class="tentacle-description"
-    data-text={{{descriptionAttr}}}
+  <img {{action "toggleSelected"}}
+    src={{image}} 
+    class="tentacle-image" 
+    alt="Placeholder" 
   >
-    <img
-      src={{image}} 
-      class="tentacle-image" 
-      alt="Placeholder"
-    >
-  </div>
 </div>
 
 <div class="mdc-card__actions">
   <h6 class="tentacle-title mdc-card__action mdc-typography--headline6">{{title}}</h6>
-  <h6 class="tentacle-cost mdc-card__action mdc-typography--headline6">Cost: {{cost}}</h6>
+
+  <button {{action "toogleExpanded"}}
+    class="expand material-icons mdc-icon-button mdc-card__action mdc-card__action--button"
+    title="More options" 
+  >
+    {{if isExpanded "expand_less" "expand_more"}}
+  </button>
+</div>
+
+<div 
+  class="tentacle-description mdc-card__actions mdc-typography--subtitle2 {{if isExpanded "expanded"}}"
+>
+  {{description}}
 </div>
