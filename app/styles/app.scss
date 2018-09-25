@@ -1,8 +1,8 @@
-@import "@material/card/mdc-card";
-@import "@material/button/mdc-button";
-@import "@material/icon-button/mdc-icon-button";
-@import "@material/typography/mdc-typography";
 @import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/typography/mdc-typography";
+
+
+@import "breakpoint-sass/stylesheets/_breakpoint";
 
 @import "__grid.scss";
 
@@ -18,51 +18,64 @@ body {
 
 @import "components/tentacle-card.scss";
 
+
 .tentacle-group {
-  float: left;
+  display: block;
 
   .tentacle-group-title {
     display: block;
 
     text-align: center;
+
+    @include mdc-typography(headline3);
+    @include mdc-typography-baseline-top(0px);
+    @include mdc-typography-baseline-bottom(0px);
+
+    //overflow: hidden;
+
+    color: map-get($mdc-theme-property-values, text-primary-on-background);
   }
   .tentacle-group-description {
     display: block;
 
     text-align: center;
-  }
 
-  .tentacle-list {
-    // display: block;
+    @include mdc-typography(subtitle1);
+    @include mdc-typography-baseline-top(0);
 
-    display: flex;
-    flex-wrap: wrap; // allow wrapping items
+    //overflow: hidden;
 
-    .tentacle-card-parent {
-      display: block;
-      // float: left;
-
-      @include breakpoint(100px) {
-        width: span(1 of 1);
-        margin: gutter() 0 gutter() gutter();
-      }
-      @include breakpoint(500px) {
-        width: span(1 of 2);
-        margin: gutter() 0 gutter() gutter();
-      }
-      @include breakpoint(700px) {
-        width: span(1 of 3);
-        margin: gutter() 0 gutter() gutter();
-      }
-      @include breakpoint(900px) {
-        width: span(1 of 4);
-        margin: gutter() 0 gutter() gutter();
-      }
-      @include breakpoint(1100px) {
-        width: span(1 of 5);
-        margin: gutter() 0 gutter() gutter();
-      }
-    }
+    color: map-get($mdc-theme-property-values, text-primary-on-background);
   }
 }
 
+.tentacle-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  .tentacle-card-parent {
+    display: block;
+
+    // Dynamic grid
+    @include breakpoint(100px) {
+      width: span(1 of 1);
+      margin: gutter() 0 gutter() gutter();
+    }
+    @include breakpoint(350px) {
+      width: span(1 of 2);
+      margin: gutter() 0 gutter() gutter();
+    }
+    @include breakpoint(525px) {
+      width: span(1 of 3);
+      margin: gutter() 0 gutter() gutter();
+    }
+    @include breakpoint(700px) {
+      width: span(1 of 4);
+      margin: gutter() 0 gutter() gutter();
+    }
+    @include breakpoint(875px) {
+      width: span(1 of 5);
+      margin: gutter() 0 gutter() gutter();
+    }
+  }
+}

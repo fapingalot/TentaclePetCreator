@@ -1,22 +1,21 @@
 @import "@material/card/mdc-card";
+@import "@material/button/mdc-button";
 @import "@material/typography/mdc-typography";
-@import "@material/icon-button/mdc-icon-button";
 @import "@material/ripple/mdc-ripple";
-
-@import "__my_lib/mixins/__filter";
+@import "@material/theme/mdc-theme";
+@import "@material/elevation/mdc-elevation";
 
 .tentacle-card {
   position: relative;
   width: 100%;
-  max-width: 400px;
+
+  // max-width: 400px; // Debug
 
   .selected-icon {
     position: absolute;
     z-index: 1;
-    top: 3px;
-    right: 3px;
-
-    color: $mdc-theme-primary;
+    top: 8px;
+    right: 8px;
 
     visibility: hidden;
     
@@ -24,8 +23,17 @@
       visibility: visible;
     }
 
+    color: map-get($mdc-theme-property-values, primary);
+
     &.disabled {
-        color: grey;
+        color: map-get($mdc-theme-property-values, text-disabled-on-background);
+    }
+  }
+
+  .tentacle-title-container {
+    .tentacle-title {
+      @include mdc-typography-baseline-top(0px);
+      @include mdc-typography-baseline-bottom(0px);
     }
   }
 
@@ -33,30 +41,28 @@
     display: block;
     width: 100%;
 
-    padding: 0px;
-    margin: 0px;
-  }
-
-  .thumbnail {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-
-      margin-right: 4px;
-  }
-
-  .tentacle-title {
-      margin: 0;
-  }
-  .expand {
-      float: left;
+    @include mdc-card-media-aspect-ratio(1, 1);
   }
 
   .tentacle-description {
-    display: none;
+    display: block;
+    width: 100%;
+    padding-bottom: 0px;
 
-    &.expanded {
-        display: block;
+    background-color: darken(map-get($mdc-theme-property-values, surface), 5%);
+
+    //@include mdc-elevation(1);
+
+    .line {
+      display: block;
+      margin-bottom: 8px;
+      text-align: center;
+
+      color: map-get($mdc-theme-property-values, text-primary-on-background);
+
+      &:last-child {
+        margin-bottom: 3px;
+      }
     }
   }
 }

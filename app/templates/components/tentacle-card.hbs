@@ -1,30 +1,45 @@
+{{!-- Selected icon !--}}
 <i 
-  class="selected-icon material-icons {{if isSelected "visible"}} {{unless canChange "disabled"}}"
+  class="selected-icon material-icons {{if isSelected "visible"}} {{unless model.canChange "disabled"}}"
 >
   check_circle
 </i>
 
-<div class="mdc-card__media">
-  <img {{action "toggleSelected"}}
-    src={{image}} 
-    class="tentacle-image" 
-    alt="Placeholder" 
+{{!-- Clickable area !--}}
+<div {{action "toggleSelected"}}
+  class="mdc-card__primary-action"
+>
+  {{!-- Title !--}}
+  <div class="tentacle-title-container mdc-card__actions">
+    <h2 class="tentacle-title mdc-typography--headline6">{{model.title}}</h2>
+  </div>
+  
+  {{!-- Picture !--}}
+  <div
+    class="mdc-card__media tentacle-image" 
+    style={{imageStyle}}
   >
+
+  </div>
 </div>
 
-<div class="mdc-card__actions">
-  <h6 class="tentacle-title mdc-card__action mdc-typography--headline6">{{title}}</h6>
-
-  <button {{action "toogleExpanded"}}
-    class="expand material-icons mdc-icon-button mdc-card__action mdc-card__action--button"
-    title="More options" 
-  >
-    {{if isExpanded "expand_less" "expand_more"}}
-  </button>
-</div>
-
+{{!-- Description !--}}
 <div 
   class="tentacle-description mdc-card__actions mdc-typography--subtitle2 {{if isExpanded "expanded"}}"
 >
-  {{description}}
+  {{#each model.description as |descLine|}}
+    <div class="line mdc-typography--body1">
+      {{descLine}}
+    </div>
+  {{/each}}
+</div>
+
+{{!-- Description Toogle !--}}
+<div class="mdc-card__actions">
+  <button {{action "toogleExpanded"}}
+    class="expand mdc-button mdc-card__action mdc-card__action--button"
+    title="More options" 
+  >
+    {{if isExpanded "COLLAPSE" "EXPAND"}}
+  </button>
 </div>
