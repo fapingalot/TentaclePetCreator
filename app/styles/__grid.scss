@@ -1,29 +1,8 @@
 @import "susy/sass/susy";
-@import "breakpoint-sass/stylesheets/_breakpoint";
-
-// Symmetrical layouts
-$grid-template-columns: repeat(12, 120px);
-$columns: susy-repeat(12, 120px);
-
-// unitless fluid gutters…
-$gutters: 8px;
-
-// assume min-width (by default) if only a number
-$high-tide: 500px;
-// set min-width/max-width if both values are numbers
-$ex-presidents: 600px 800px;
-// if one value is a string, assume a feature/value pair
-$surfboard-width: max-width 1000px;
-// string tests together within parentheses, assume each item is a feature value pair
-$surfboard-height: (min-height 1000px) (orientation portrait);
 
 $susy: (
   'columns': susy-repeat(5),
-  'gutters': 3px,
+  'gutters': 8px,
   'spread': 'narrow',
   'container-spread': 'wider',
-
-  debug: (
-      image: show,
-  ),
 );
