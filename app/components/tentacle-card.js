@@ -2,20 +2,18 @@ import Component from '@ember/component';
 import { A } from '@ember/array';
 import { computed, /*get*/ } from '@ember/object';
 import { htmlSafe } from '@ember/string';
+import { inject as service } from '@ember/service';
 
 export default Component.extend({
+    imageService: service('responsive-image'),
     tagName : "div",
     classNames: ["tentacle-card", "mdc-card"],
 
-    model: computed(function() {
-        return {
-            title: "Monster",
-            image: "/tentacle_pictures/default.png",
-            description: A(["No this is bla bla bla"]),
-            cost: 0,
-            canChange: false,
-        };
-    }),
+    title: "Monster",
+    image: "/tentacle_pictures/default.png",
+    description: A(["No this is bla bla bla"]),
+    cost: 0,
+    canChange: false,
 
     isSelected: false,
     isExpanded: false,
@@ -25,7 +23,7 @@ export default Component.extend({
     },
     actions: {
         toggleSelected(){
-            if(this.model.canChange) {
+            if(this.canChange) {
                 this.set("isSelected", !this.isSelected);
             }
         },
@@ -40,7 +38,8 @@ export default Component.extend({
         }
     },
 
-    imageStyle: computed('model.image', function() {
-        return htmlSafe(`background-image: url('${this.model.image}');`);
+    imageStyle: computed('image', function() {
+        let spl = this.image.split("/");
+        return htmlSafe(`background-image: url('${this.imageService.getImageBySize(spl[spl.length -1], 300)}');`);
     }),
 });

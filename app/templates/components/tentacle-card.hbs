@@ -1,6 +1,6 @@
 {{!-- Selected icon !--}}
 <i 
-  class="selected-icon material-icons {{if isSelected "visible"}} {{unless model.canChange "disabled"}}"
+  class="selected-icon material-icons {{if isSelected "visible"}} {{unless canChange "disabled"}}"
 >
   check_circle
 </i>
@@ -11,7 +11,7 @@
 >
   {{!-- Title !--}}
   <div class="tentacle-title-container mdc-card__actions">
-    <h2 class="tentacle-title mdc-typography--headline6">{{model.title}}</h2>
+    <h2 class="tentacle-title">{{title}}</h2>
   </div>
   
   {{!-- Picture !--}}
@@ -25,10 +25,10 @@
 
 {{!-- Description !--}}
 <div 
-  class="tentacle-description mdc-card__actions mdc-typography--subtitle2 {{if isExpanded "expanded"}}"
+  class="tentacle-description mdc-card__actions {{if isExpanded "expanded"}}"
 >
-  {{#each model.description as |descLine|}}
-    <div class="line mdc-typography--body1">
+  {{#each description as |descLine|}}
+    <div class="line">
       {{descLine}}
     </div>
   {{/each}}

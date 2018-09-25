@@ -32,6 +32,7 @@
 
   .tentacle-title-container {
     .tentacle-title {
+      @include mdc-typography(headline6);
       @include mdc-typography-baseline-top(0px);
       @include mdc-typography-baseline-bottom(0px);
     }
@@ -55,13 +56,16 @@
 
     .line {
       display: block;
-      margin-bottom: 8px;
-      text-align: center;
 
+      @include mdc-typography(body2);
+      @include mdc-typography-baseline-top(0px);
+      @include mdc-typography-baseline-bottom(-8px);
+
+      text-align: center;
       color: map-get($mdc-theme-property-values, text-primary-on-background);
 
       &:last-child {
-        margin-bottom: 3px;
+        @include mdc-typography-baseline-bottom(-3px);
       }
     }
   }
