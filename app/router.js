@@ -8,6 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('not-found', {path : '/*path'});
+  this.route('group', {path : '/group/:id'});
 });
 
 export default Router;

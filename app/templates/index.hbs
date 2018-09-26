@@ -11,7 +11,11 @@
         {{#each group.values as |tentacle|}}
           <div class="tentacle-card-parent">
             {{tentacle-card
-              model=tentacle
+              title=tentacle.title
+              image=tentacle.image
+              cost=tentacle.cost
+              description=tentacle.description
+              canChange=tentacle.canChange
               isSelected=tentacle.defaultSelected
             }}
           </div>

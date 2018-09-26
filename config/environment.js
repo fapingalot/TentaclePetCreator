@@ -20,6 +20,16 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    'responsive-image': {
+      sourceDir: 'tentacle_pictures',
+      destinationDir: 'assets/responsive',
+      quality: 80,
+      supportedWidths: [2048, 1536, 1080, 750, 640],
+      removeSourceDir: true,
+      justCopy: false,
+      extensions: ['jpg', 'jpeg', 'png', 'gif']
     }
   };
 

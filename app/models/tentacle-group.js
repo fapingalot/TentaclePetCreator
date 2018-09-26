@@ -1,8 +1,10 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
-    title: DS.attr(),
-    description: DS.attr(),
+const {attr} = DS;
 
-    elements: DS.hasMany('tentacle-element'),
+export default DS.Model.extend({
+    name: attr('string'),
+    cost: attr('number'),
+
+    // elements: DS.hasMany('tentacle-element'),
 });

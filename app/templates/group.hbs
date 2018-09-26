@@ -1,0 +1,22 @@
+<div class="tentacle-group">
+  <h1 class="tentacle-group-title">{{model.name}}</h1>
+
+  {{#each model.description as |desc|}}
+    <p class="tentacle-group-description">{{desc}}</p>
+  {{/each}}
+
+  <div class="tentacle-list">
+    {{#each model.values as |tentacle|}}
+      <div class="tentacle-card-parent">
+        {{tentacle-card
+          title=tentacle.title
+          image=tentacle.image
+          cost=tentacle.cost
+          description=tentacle.description
+          canChange=tentacle.canChange
+          isSelected=true
+        }}
+      </div>
+    {{/each}}
+  </div>
+</div>

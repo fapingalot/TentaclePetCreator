@@ -39,7 +39,8 @@ export default Component.extend({
     },
 
     imageStyle: computed('image', function() {
-        let spl = this.image.split("/");
-        return htmlSafe(`background-image: url('${this.imageService.getImageBySize(spl[spl.length -1], 300)}');`);
+        //let spl = this.image.split("/");
+        //let spImage = this.imageService.getImageBySize(spl[spl.length -1], 300);
+        return htmlSafe(`background-image: url('${this.image}');`);
     }),
 });
